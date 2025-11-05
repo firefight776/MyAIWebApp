@@ -1,0 +1,21 @@
+{
+  "family": "my-ai-app",
+  "executionRoleArn": "arn:aws:iam::741448958661:role/YourEcsTaskExecutionRole",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "containerDefinitions": [
+    {
+      "name": "web",
+      "image": "741448958661.dkr.ecr.us-east-1.amazonaws.com/my-ai-app:latest",
+      "portMappings": [
+        {
+          "containerPort": 80,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true
+    }
+  ]
+}
